@@ -2,6 +2,7 @@ package com.example.calculator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+<<<<<<< HEAD
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -126,5 +127,15 @@ public class excalculator extends AppCompatActivity {
     public void back(View view) {
         Intent intent = new Intent(excalculator.this, MainActivity.class);
         startActivity(intent);
+=======
+import android.os.Bundle;
+
+public class excalculator extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_excalculator);
+>>>>>>> ea6d215516e2be62abb4da53689384d80768fe91
     }
 }

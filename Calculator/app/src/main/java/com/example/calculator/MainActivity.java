@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+<<<<<<< HEAD
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -19,14 +20,27 @@ public class MainActivity extends AppCompatActivity {
     TextView show2;
     Button bn;
 
+=======
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+    TextView show;
+>>>>>>> ea6d215516e2be62abb4da53689384d80768fe91
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
 
+<<<<<<< HEAD
     public void onClick(View view) {
         switch (view.getId()) {
+=======
+    public void onClick(View view){
+        switch (view.getId()){
+>>>>>>> ea6d215516e2be62abb4da53689384d80768fe91
             case R.id.bt0:
             case R.id.bt1:
             case R.id.bt4:
@@ -46,9 +60,15 @@ public class MainActivity extends AppCompatActivity {
                 String addContent = btn0.getText().toString();
                 show = (TextView) findViewById(R.id.input);
                 String nowContent = show.getText().toString();
+<<<<<<< HEAD
                 String newContent = nowContent + addContent;
                 show.setText(newContent);
                 break;
+=======
+                String newContent = nowContent +addContent;
+                show.setText(newContent);
+                  break;
+>>>>>>> ea6d215516e2be62abb4da53689384d80768fe91
 
             case R.id.bt_C:
                 show = (TextView) findViewById(R.id.input);
@@ -60,11 +80,16 @@ public class MainActivity extends AppCompatActivity {
             case R.id.bt_DEL:
                 show = (TextView) findViewById(R.id.input);
                 String nowContent1 = show.getText().toString();
+<<<<<<< HEAD
                 String cut = nowContent1.substring(0, nowContent1.length() - 1);
+=======
+                String cut = nowContent1.substring(0,nowContent1.length()-1);
+>>>>>>> ea6d215516e2be62abb4da53689384d80768fe91
                 show.setText(cut);
                 break;
 
             case R.id.bt_dengyu:
+<<<<<<< HEAD
                 show = (TextView) findViewById(R.id.input);
                 show2 = (TextView) findViewById(R.id.output);
                 String result = show.getText().toString();
@@ -76,10 +101,21 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.Ex:
                 Intent intent = new Intent(MainActivity.this, excalculator.class);
+=======
+                show = (TextView) findViewById(R.id.output);
+                show.setText("=");
+                show = (TextView) findViewById(R.id.input);
+                String result = show.getText().toString();
+                break;
+
+            case  R.id.Ex:
+                Intent intent = new Intent(MainActivity.this,excalculator.class);
+>>>>>>> ea6d215516e2be62abb4da53689384d80768fe91
                 startActivity(intent);
                 break;
 
 
+<<<<<<< HEAD
             default:
                 throw new IllegalStateException("Unexpected value: " + view.getId());
         }
@@ -226,6 +262,25 @@ public class MainActivity extends AppCompatActivity {
             numStack.pop();
             Log.d(tag,numStack.peek());
             return numStack.peek();
+=======
+            //获取设置的配置信息
+            Configuration mConfiguration = this.getResources().getConfiguration();
+            //获取屏幕方向
+            int ori = mConfiguration.orientation;
+            if (ori == mConfiguration.ORIENTATION_LANDSCAPE) {
+                //横屏
+            } else if (ori == mConfiguration.ORIENTATION_PORTRAIT) {
+                //竖屏
+            }
+
+
+
+
+
+
+            default:
+                throw new IllegalStateException("Unexpected value: " + view.getId());
+>>>>>>> ea6d215516e2be62abb4da53689384d80768fe91
         }
     }
 }
