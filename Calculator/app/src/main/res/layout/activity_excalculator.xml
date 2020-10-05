@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:rowCount="5"
+    android:columnCount="4">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_columnSpan="4"
+        android:id="@+id/input"
+        android:textSize="60sp"
+        android:paddingRight="10dp"
+        android:gravity="right|center_vertical|top"
+        android:textColor="#0f0"
+        android:layout_rowWeight="4"
+        android:hint="进制转换"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_columnSpan="4"
+        android:id="@+id/output"
+        android:textSize="60sp"
+        android:paddingRight="10dp"
+        android:gravity="right|center_vertical|top"
+        android:textColor="#0f0"
+        android:layout_rowWeight="4" />
+
+    <Button android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="C"
+        android:id="@+id/bt_C"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:onClick="onClick"/>
+
+    <Button android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="DEL"
+        android:id="@+id/bt_DEL"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:onClick="onClick"/>
+
+    <Button android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="转十"
+        android:id="@+id/bt_zhengfu"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"/>
+
+    <Button android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="十进制"
+        android:id="@+id/bt_10jz"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:onClick="tenjz"/>
+
+    <Button android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="7"
+        android:id="@+id/bt7"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:onClick="onClick"/>
+
+
+    <Button android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="8"
+        android:id="@+id/bt8"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:onClick="onClick"/>
+
+    <Button android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="9"
+        android:id="@+id/bt9"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:onClick="onClick"/>
+
+    <Button android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="二进制"
+        android:id="@+id/bt_2jz"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:onClick="twojz"/>
+
+    <Button android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="4"
+        android:id="@+id/bt4"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:onClick="onClick"/>
+
+    <Button android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="5"
+        android:id="@+id/bt5"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:onClick="onClick"/>
+
+    <Button android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="6"
+        android:id="@+id/bt6"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:onClick="onClick"/>
+
+    <Button android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="十六进制"
+        android:id="@+id/bt_16jz"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:onClick="sixteenjz"/>
+
+    <Button android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="1"
+        android:id="@+id/bt1"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:onClick="onClick"/>
+
+    <Button android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="2"
+        android:id="@+id/bt2"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:onClick="onClick"/>
+
+    <Button android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="3"
+        android:id="@+id/bt3"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:onClick="onClick"/>
+
+    <Button android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="八进制"
+        android:id="@+id/bt_8jz"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:onClick="eightjz"/>
+
+    <Button android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="0"
+        android:layout_gravity="fill_horizontal"
+        android:id="@+id/bt0"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:onClick="onClick"/>
+
+    <Button android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="."
+        android:id="@+id/bt_dian"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:onClick="onClick"/>
+
+    <Button android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="＝"
+        android:id="@+id/bt_dengyu"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:onClick="onClick"/>
+
+    <Button android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:gravity="center"
+        android:text="back"
+        android:id="@+id/bk"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:onClick="back"/>
+</GridLayout>
+=======
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".excalculator">
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1111111"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
+>>>>>>> ea6d215516e2be62abb4da53689384d80768fe91
