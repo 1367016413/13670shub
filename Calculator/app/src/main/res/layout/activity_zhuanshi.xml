@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".zhuanshi">
+
+    <Button
+        android:id="@+id/buttontwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="9dp"
+        android:onClick="er"
+        android:text="转换 "
+        app:layout_constraintBottom_toBottomOf="@+id/two"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/two" />
+
+    <EditText
+        android:id="@+id/two"
+        android:layout_width="0dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="508dp"
+        android:layout_marginEnd="16dp"
+        android:hint="二进制"
+        app:layout_constraintEnd_toStartOf="@+id/buttontwo"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttoneig"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="6dp"
+        android:onClick="ba"
+        android:text="转换 "
+        app:layout_constraintBaseline_toBaselineOf="@+id/eig"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/eig" />
+
+    <EditText
+        android:id="@+id/eig"
+        android:layout_width="0dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="328dp"
+        android:layout_marginEnd="16dp"
+        android:hint="八进制"
+        app:layout_constraintEnd_toStartOf="@+id/buttoneig"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonsix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="6dp"
+        android:onClick="shiliui"
+        android:text="转换 "
+        app:layout_constraintBaseline_toBaselineOf="@+id/tsix"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tsix" />
+
+    <EditText
+        android:id="@+id/tsix"
+        android:layout_width="0dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="163dp"
+        android:layout_marginEnd="16dp"
+        android:hint="十六进制"
+        app:layout_constraintEnd_toStartOf="@+id/buttonsix"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,7 +2,6 @@ package com.example.calculator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-<<<<<<< HEAD
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -19,44 +18,6 @@ public class excalculator extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(layout.activity_excalculator);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     public void onClick(View view) {
@@ -127,15 +88,10 @@ public class excalculator extends AppCompatActivity {
     public void back(View view) {
         Intent intent = new Intent(excalculator.this, MainActivity.class);
         startActivity(intent);
-=======
-import android.os.Bundle;
+    }
 
-public class excalculator extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_excalculator);
->>>>>>> ea6d215516e2be62abb4da53689384d80768fe91
+    public void zhuan(View view) {
+        Intent zs = new Intent(excalculator.this, zhuanshi.class);
+        startActivity(zs);
     }
 }

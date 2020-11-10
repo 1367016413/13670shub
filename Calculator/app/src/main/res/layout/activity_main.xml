@@ -15,12 +15,8 @@
         android:paddingRight="10dp"
         android:gravity="right|center_vertical|top"
         android:textColor="#0f0"
-<<<<<<< HEAD
         android:layout_rowWeight="4"
         android:hint="输入"/>
-=======
-        android:layout_rowWeight="4" />
->>>>>>> ea6d215516e2be62abb4da53689384d80768fe91
 
     <TextView
         android:layout_width="match_parent"
@@ -54,19 +50,16 @@
     <Button android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="+/-"
-        android:id="@+id/bt_zhengfu"
+        android:text="+-"
+        android:id="@+id/bt_kuohao"
         android:layout_columnWeight="1"
-        android:layout_rowWeight="1"/>
+        android:layout_rowWeight="1"
+        />
 
     <Button android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-<<<<<<< HEAD
         android:text="/"
-=======
-        android:text="÷"
->>>>>>> ea6d215516e2be62abb4da53689384d80768fe91
         android:id="@+id/bt_chu"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
@@ -139,11 +132,7 @@
     <Button android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-<<<<<<< HEAD
         android:text="-"
-=======
-        android:text="—"
->>>>>>> ea6d215516e2be62abb4da53689384d80768fe91
         android:id="@+id/bt_jian"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
@@ -179,11 +168,7 @@
     <Button android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-<<<<<<< HEAD
         android:text="*"
-=======
-        android:text="×"
->>>>>>> ea6d215516e2be62abb4da53689384d80768fe91
         android:id="@+id/bt_cheng"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"

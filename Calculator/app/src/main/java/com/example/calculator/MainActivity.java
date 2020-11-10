@@ -1,46 +1,31 @@
 package com.example.calculator;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-<<<<<<< HEAD
-import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+
 import java.util.Stack;
 
 public class MainActivity extends AppCompatActivity {
-    private static  final String tag ="asd";
     TextView show;
     TextView show2;
     Button bn;
 
-=======
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
-
-public class MainActivity extends AppCompatActivity {
-    TextView show;
->>>>>>> ea6d215516e2be62abb4da53689384d80768fe91
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
 
-<<<<<<< HEAD
     public void onClick(View view) {
         switch (view.getId()) {
-=======
-    public void onClick(View view){
-        switch (view.getId()){
->>>>>>> ea6d215516e2be62abb4da53689384d80768fe91
             case R.id.bt0:
             case R.id.bt1:
             case R.id.bt4:
@@ -60,15 +45,9 @@ public class MainActivity extends AppCompatActivity {
                 String addContent = btn0.getText().toString();
                 show = (TextView) findViewById(R.id.input);
                 String nowContent = show.getText().toString();
-<<<<<<< HEAD
                 String newContent = nowContent + addContent;
                 show.setText(newContent);
                 break;
-=======
-                String newContent = nowContent +addContent;
-                show.setText(newContent);
-                  break;
->>>>>>> ea6d215516e2be62abb4da53689384d80768fe91
 
             case R.id.bt_C:
                 show = (TextView) findViewById(R.id.input);
@@ -80,47 +59,33 @@ public class MainActivity extends AppCompatActivity {
             case R.id.bt_DEL:
                 show = (TextView) findViewById(R.id.input);
                 String nowContent1 = show.getText().toString();
-<<<<<<< HEAD
                 String cut = nowContent1.substring(0, nowContent1.length() - 1);
-=======
-                String cut = nowContent1.substring(0,nowContent1.length()-1);
->>>>>>> ea6d215516e2be62abb4da53689384d80768fe91
                 show.setText(cut);
                 break;
 
             case R.id.bt_dengyu:
-<<<<<<< HEAD
                 show = (TextView) findViewById(R.id.input);
                 show2 = (TextView) findViewById(R.id.output);
                 String result = show.getText().toString();
-                StringToRes P = new StringToRes();
-                result = P.stringToRes(result);
-                show2.setText("=" +result);
+                Caculater Z = new Caculater(result);
+                Double result1 = Z.suan();
+                show2.setText("=" + result1);
                 break;
-
 
             case R.id.Ex:
                 Intent intent = new Intent(MainActivity.this, excalculator.class);
-=======
-                show = (TextView) findViewById(R.id.output);
-                show.setText("=");
-                show = (TextView) findViewById(R.id.input);
-                String result = show.getText().toString();
-                break;
-
-            case  R.id.Ex:
-                Intent intent = new Intent(MainActivity.this,excalculator.class);
->>>>>>> ea6d215516e2be62abb4da53689384d80768fe91
                 startActivity(intent);
                 break;
 
+            case R.id.bt_cha:
+                Intent intent1 = new Intent(MainActivity.this, change.class);
+                startActivity(intent1);
+                break;
 
-<<<<<<< HEAD
             default:
                 throw new IllegalStateException("Unexpected value: " + view.getId());
         }
     }
-
 
 
     public void sin(View view) {
@@ -129,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
         String count = show.getText().toString();
         double a = Double.valueOf(count);
         double b = Math.toRadians(a);
-        show2.setText("=" +Math.sin(b));
+        show2.setText("=" + Math.sin(b));
 
     }
 
@@ -139,148 +104,197 @@ public class MainActivity extends AppCompatActivity {
         String count = show.getText().toString();
         double a = Double.valueOf(count);
         double b = Math.toRadians(a);
-        show2.setText("=" +Math.cos(b));
+        show2.setText("=" + Math.cos(b));
     }
 
-    public void x2(View view) {
+    public void kuohao(View view) {
         show = (TextView) findViewById(R.id.input);
         show2 = (TextView) findViewById(R.id.output);
-        String count = show.getText().toString();
-        double a = Double.valueOf(count);
-        show2.setText("=" +a*a);
+        String a = show.getText().toString();
+        String b = a + "(";
+        show.setText(b);
+    }
+
+    public void kuohao2(View view) {
+        show = (TextView) findViewById(R.id.input);
+        show2 = (TextView) findViewById(R.id.output);
+        String a = show.getText().toString();
+        String b = a + ")";
+        show.setText(b);
     }
 
 
-    public class StringToRes {
+    class Caculater {
+        private String[] sArry;
+        private Stack<String> houx = new Stack<String>();
+        private Stack<String> fuhao = new Stack<String>();
 
+        Caculater(String str) {
+            int i = str.length() - 1;
+            String temp = "";
+            int j = 0;
+            Boolean bool = true;
+            while (true) {
+                if (!bool) break;
+                if (i == j) {
+                    bool = false;
+                }
+                if (str.charAt(j) == '+'
+                        || str.charAt(j) == '-'
+                        || str.charAt(j) == '*'
+                        || str.charAt(j) == '/'
+                        || str.charAt(j) == '('
+                        || str.charAt(j) == ')') {
+                    temp += '#';
+                    temp += str.charAt(j);
+                    temp += '#';
+                } else {
+                    temp += str.charAt(j);
+                }
+                j++;
+            }
+            sArry = temp.split("#+"); //用正则表达式分割成字符串
+        }
 
+        //后序排列
+        public void backsort() {
+            //循环sArry
+            for (int i = 0; i < sArry.length; i++) {
+                //如果不是字符，就直接push入houx栈
+                if (!sArry[i].equals("+")
+                        && !sArry[i].equals("-")
+                        && !sArry[i].equals("*")
+                        && !sArry[i].equals("/")
+                        && !sArry[i].equals("(")
+                        && !sArry[i].equals(")")) {
+                    houx.push(sArry[i]);
+                    continue;
+                    //否则是字符，若符号栈为空，直接入栈
+                } else if (fuhao.isEmpty()) {
+                    fuhao.push(sArry[i]);
+                    continue;
+                    //如果为（括号，直接入符号栈
+                } else if (sArry[i].equals("(")) {
+                    fuhao.push(sArry[i]);
+                    continue;
+                    //如果为）括号
+                } else if (sArry[i].equals(")")) {
+                    /**
+                     * 不断出栈直到（括号出现
+                     *
+                     */
+                    while (!fuhao.peek().equals("(")) {
+                        houx.push(fuhao.pop());
+                    }
+                    fuhao.pop();//清掉（括号
+                    //如果不为空，且要入的符号比符号栈顶的符号优先级高，则直接push入符号栈
+                } else if (!fuhao.isEmpty() && check(sArry[i], fuhao.peek())) {            //
+                    fuhao.push(sArry[i]);
+                    continue;
+                    //否则，将符号栈内优先级高的符号出栈，push入houx栈，再将符号存进符号栈
+                } else {
+                    houx.push(fuhao.pop());
+                    fuhao.push(sArry[i]);
+                    continue;
+                }
+            }
 
-        //判断字符是否为操作符
-        public boolean isOpr(String s) {
+            while (!fuhao.isEmpty()) {
+                houx.push(fuhao.pop());
+            }
+        }
 
-            if ("+".equals(s) || "-".equals(s) || "*".equals(s) || "/".equals(s)) {
+        //check对比优先级
+        private boolean check(String a, String b) {
+            if (b.equals("(")) {
+                return true;
+            }
+            if ((b.equals("*") || b.equals("/")) && (a.equals("+") || a.equals("-"))) {
+                return false;
+            }
+            if ((b.equals("+") || b.equals("-")) && (a.equals("*") || a.equals("/"))) {
                 return true;
             }
             return false;
         }
 
-        //判断操作符优先级
-        public int priority(String s) {
 
-            if ("+".equals(s) || "-".equals(s)) {
-                return 1;
-            } else {
-                return 2;
-            }
-        }
+        public Double suan() {
 
-        //将栈内单字符粘成字符串
-        public void linkString(Stack<String> stack) {
-
-            if (stack.peek().equals("#")) {
-                return;
-            }
-            StringBuilder number = new StringBuilder();
-            while (true) {
-                String s = stack.peek();
-                if (s.equals("#")) {
-                    break;
-                }
-                number.insert(0, s);
-                stack.pop();
-            }
-            stack.push(number.toString());
-            stack.push("#");
-            number.delete(0, number.length());
-        }
-
-        //计算运算式
-        public void calculate(Stack<String> numStack, Stack<String> oprStack) {
-
-            double res = 0;
-            //弹出右操作数上的#并将其转为double计算
-            numStack.pop();
-            double rightNum = Double.parseDouble(numStack.pop());
-            //弹出左操作数上的#并将其转为double计算
-            numStack.pop();
-            double leftNum = Double.parseDouble(numStack.pop());
-            String opr = oprStack.pop();
-            switch (opr) {
-                case "+":
-                    res = leftNum + rightNum;
-                    break;
-                case "-":
-                    res = leftNum - rightNum;
-                    break;
-                case "*":
-                    res = leftNum * rightNum;
-                    break;
-                case "/":
-                    res = leftNum / rightNum;
-                    break;
-                default:
-                    break;
-            }
-
-            //将计算结果压栈
-            numStack.push(String.valueOf(res));
-            numStack.push("#");
-        }
-
-        //接收字符串进行计算操作
-        public String stringToRes(String str) {
-
-            Stack<String> numStack = new Stack<String>();
-            numStack.push("#");
-            Stack<String> oprStack = new Stack<String>();
-            String[] ss = new String[str.length()];
-            for (int i = 0; i < str.length(); i++) {
-                ss[i] = str.substring(i, i + 1);
-            }
-
-            for (String s : ss) {
-                if (isOpr(s)) {
-                    linkString(numStack);
-                    if (oprStack.isEmpty()) {
-                        oprStack.push(s);
-                    } else {
-                        while (!oprStack.isEmpty() && priority(s) <= priority(oprStack.peek())) {
-                            linkString(numStack);
-                            calculate(numStack, oprStack);
-                        }
-                        oprStack.push(s);
-                    }
+            backsort();
+            Stack<Double> end = new Stack<Double>();
+            for (int i = 0; i < houx.size(); i++) {
+                //如果是加号，end pop出来两个数字，计算后结果入栈
+                if (houx.get(i).equals("+")) {
+                    Double b = end.pop();
+                    Double a = end.pop();
+                    end.push(a + b);
+                    continue;
+                    //如果是减号，end pop出栈两个数字，计算后结果入栈
+                } else if (houx.get(i).equals("-")) {
+                    Double b = end.pop();
+                    Double a = end.pop();
+                    end.push(a - b);
+                    continue;
+                    //如果是乘号，end pop出栈两个数字，计算后结果入栈
+                } else if (houx.get(i).equals("*")) {
+                    Double b = end.pop();
+                    Double a = end.pop();
+                    end.push(a * b);
+                    continue;
+                    //如果是除号，end pop出栈两个数字，计算后结果入栈
+                } else if (houx.get(i).equals("/")) {
+                    Double b = end.pop();
+                    Double a = end.pop();
+                    end.push(a / b);
+                    continue;
+                } else if (houx.get(i).isEmpty()) {
+                    continue;
                 } else {
-                    numStack.push(s);
+                    end.push(Double.parseDouble(houx.get(i)));
                 }
-            }
-            while (!oprStack.isEmpty()) {
-                linkString(numStack);
-                calculate(numStack, oprStack);
-            }
-            Log.d(tag,numStack.peek());
-            numStack.pop();
-            Log.d(tag,numStack.peek());
-            return numStack.peek();
-=======
-            //获取设置的配置信息
-            Configuration mConfiguration = this.getResources().getConfiguration();
-            //获取屏幕方向
-            int ori = mConfiguration.orientation;
-            if (ori == mConfiguration.ORIENTATION_LANDSCAPE) {
-                //横屏
-            } else if (ori == mConfiguration.ORIENTATION_PORTRAIT) {
-                //竖屏
+
             }
 
 
-
-
-
-
-            default:
-                throw new IllegalStateException("Unexpected value: " + view.getId());
->>>>>>> ea6d215516e2be62abb4da53689384d80768fe91
+            return end.pop();
         }
+
+    }
+
+
+    //创建菜单
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.id_about_us: //关于
+                AlertDialog aboutDialog = new AlertDialog.Builder(this).create();
+                aboutDialog.setMessage("这是一个帮助");
+                aboutDialog.show();
+                break;
+        }
+        return false;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

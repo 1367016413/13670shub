@@ -11,11 +11,7 @@
         android:layout_height="25dp"
         android:layout_columnSpan="4"
         android:id="@+id/input"
-<<<<<<< HEAD
         android:textSize="20sp"
-=======
-        android:textSize="30sp"
->>>>>>> ea6d215516e2be62abb4da53689384d80768fe91
         android:paddingRight="10dp"
         android:gravity="right|center_vertical|top"
         android:textColor="#0f0"
@@ -26,11 +22,7 @@
         android:layout_height="25dp"
         android:layout_columnSpan="4"
         android:id="@+id/output"
-<<<<<<< HEAD
         android:textSize="20sp"
-=======
-        android:textSize="30sp"
->>>>>>> ea6d215516e2be62abb4da53689384d80768fe91
         android:paddingRight="10dp"
         android:gravity="right|center_vertical|top"
         android:textColor="#0f0"
@@ -57,19 +49,16 @@
     <Button android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="+/-"
-        android:id="@+id/bt_zhengfu"
+        android:text="( "
+        android:id="@+id/bt_kuohao"
         android:layout_columnWeight="1"
-        android:layout_rowWeight="1"/>
+        android:layout_rowWeight="1"
+        android:onClick="kuohao"/>
 
     <Button android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-<<<<<<< HEAD
         android:text="/"
-=======
-        android:text="÷"
->>>>>>> ea6d215516e2be62abb4da53689384d80768fe91
         android:id="@+id/bt_chu"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
@@ -142,11 +131,7 @@
     <Button android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-<<<<<<< HEAD
         android:text="-"
-=======
-        android:text="—"
->>>>>>> ea6d215516e2be62abb4da53689384d80768fe91
         android:id="@+id/bt_jian"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
@@ -182,11 +167,7 @@
     <Button android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-<<<<<<< HEAD
         android:text="*"
-=======
-        android:text="×"
->>>>>>> ea6d215516e2be62abb4da53689384d80768fe91
         android:id="@+id/bt_cheng"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
@@ -237,12 +218,8 @@
         android:id="@+id/bt_cos"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
-<<<<<<< HEAD
         android:onClick="cos"
         />
-=======
-        android:onClick="onClick"/>
->>>>>>> ea6d215516e2be62abb4da53689384d80768fe91
 
     <Button android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -251,11 +228,7 @@
         android:id="@+id/bt_sin"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
-<<<<<<< HEAD
         android:onClick="sin"/>
-=======
-        android:onClick="onClick"/>
->>>>>>> ea6d215516e2be62abb4da53689384d80768fe91
 
     <Button android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -269,13 +242,9 @@
     <Button android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="x²"
+        android:text=")"
         android:id="@+id/bt_pf"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
-<<<<<<< HEAD
-        android:onClick="x2"/>
-=======
-        android:onClick="onClick"/>
->>>>>>> ea6d215516e2be62abb4da53689384d80768fe91
+        android:onClick="kuohao2"/>
 </GridLayout>
